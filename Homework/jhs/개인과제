@@ -1,0 +1,15 @@
+ReLU 에 사용하는 초기화 : He Initialization 
+ReLU 함수에 맞는 초기화 법은 He Initialization 입니다. 
+He Initialization 은 Xavier Initialization 과 크게 다르지 않습니다. 
+단순히 인풋 개수의 절반의 제곱근으로 나누어주면 됩니다.
+w = np.random.randn(n_input, n_output) / sqrt(n_input/2)
+참고로 Dense의 default값인 glorot은 sqrt(n_input)로 나눔 (tanh일 때 잘됨) 
+홍콩 중문대 박사과정에 있던 he가 2015년에 이 방식을 사용해서 ImageNet에서 3% 에러를 달성했다고 합니다.
+
+Lstm total parameter number
+
+total parameter number: 4(nm+n2+n)
+(n: output feature, m: input feature)
+
+Adam VS Adamax
+Adam은 L2 norm 에서 전개한 것이라면 Adamax는 Lp차원 즉, 무한차원으로 확장한 공간에서 정의하는 것 같은데, 논문을 참고해야 할듯 합니다.
